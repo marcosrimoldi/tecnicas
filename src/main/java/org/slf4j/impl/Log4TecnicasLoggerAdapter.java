@@ -224,7 +224,7 @@ public class Log4TecnicasLoggerAdapter implements Logger {
 	}
 
 	public void trace(String arg0) {
-		this.trace(arg0);
+		logger.trace(arg0);
 	}
 
 	public void warn(Marker arg0, String arg1, Object arg2, Object arg3) {
@@ -265,7 +265,7 @@ public class Log4TecnicasLoggerAdapter implements Logger {
 	}
 
 	public void warn(String arg0) {
-		this.warn(arg0);
+		logger.warn(arg0);
 	}
 
 	

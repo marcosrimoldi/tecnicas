@@ -17,7 +17,6 @@ public class Log4TecnicasLoggerAdapter implements Logger {
 		this.logger = logger;
 	}
 
-
 	public void debug(Marker arg0, String arg1, Object arg2, Object arg3) {
 		this.debug(arg1);
 	}
@@ -31,7 +30,7 @@ public class Log4TecnicasLoggerAdapter implements Logger {
 	}
 
 	public void debug(Marker arg0, String arg1, Throwable arg2) {
-		this.debug(arg1);
+		this.debug(arg1, arg2);
 	}
 
 	public void debug(Marker arg0, String arg1) {
@@ -51,103 +50,100 @@ public class Log4TecnicasLoggerAdapter implements Logger {
 	}
 
 	public void debug(String arg0, Throwable arg1) {
-		// TODO implement this correctly.
-		this.debug(arg0);
+		this.logger.debug(arg0, arg1);
 	}
 
 	public void debug(String arg0) {
-		logger.debug(arg0);
+		this.logger.debug(arg0);
 	}
 
 	public void error(Marker arg0, String arg1, Object arg2, Object arg3) {
-		error(arg1);
+		this.error(arg1);
 	}
 
 	public void error(Marker arg0, String arg1, Object... arg2) {
-		error(arg1);
+		this.error(arg1);
 	}
 
 	public void error(Marker arg0, String arg1, Object arg2) {
-		error(arg1);
+		this.error(arg1);
 	}
 
 	public void error(Marker arg0, String arg1, Throwable arg2) {
-		error(arg1);
+		this.error(arg1, arg2);
 	}
 
 	public void error(Marker arg0, String arg1) {
-		error(arg1);
+		this.error(arg1);
 	}
 
 	public void error(String arg0, Object arg1, Object arg2) {
-		error(arg0);
+		this.error(arg0);
 		
 	}
 
 	public void error(String arg0, Object... arg1) {
-		error(arg0);
+		this.error(arg0);
 	}
 
 	public void error(String arg0, Object arg1) {
-		error(arg0);
+		this.error(arg0);
 	}
 
 	public void error(String arg0, Throwable arg1) {
-		// TODO implement this correctly.
-		error(arg0);
+		this.logger.error(arg0, arg1);
 	}
 
 	public void error(String arg0) {
-		logger.error(arg0);
+		this.logger.error(arg0);
 	}
 
 	public String getName() {
-		return logger.getName();
+		return this.logger.getName();
 	}
 
 	public void info(Marker arg0, String arg1, Object arg2, Object arg3) {
-		info(arg1);
+		this.info(arg1);
 	}
 
 	public void info(Marker arg0, String arg1, Object... arg2) {
-		info(arg1);
+		this.info(arg1);
 	}
 
 	public void info(Marker arg0, String arg1, Object arg2) {
-		info(arg1);		
+		this.info(arg1);		
 	}
 
 	public void info(Marker arg0, String arg1, Throwable arg2) {
-		info(arg1);		
+		this.info(arg1, arg2);		
 	}
 
 	public void info(Marker arg0, String arg1) {
-		info(arg1);		
+		this.info(arg1);		
 	}
 
 	public void info(String arg0, Object arg1, Object arg2) {
-		info(arg0);		
+		this.info(arg0);		
 	}
 
 	public void info(String arg0, Object... arg1) {
-		info(arg0);
+		this.info(arg0);
 	}
 
 	public void info(String arg0, Object arg1) {
-		info(arg0);		
+		this.info(arg0);		
 	}
 
 	public void info(String arg0, Throwable arg1) {
-		// TODO implement this correctly.
-		info(arg0);		
+		this.logger.info(arg0, arg1);
 	}
 
 	public void info(String arg0) {
-		logger.info(arg0);
+		this.logger.info(arg0);
 	}
 
 	public boolean isDebugEnabled() {
-		return logger.isDebugEnabled();
+		return this.logger.isDebugEnabled();
 	}
 
 	public boolean isDebugEnabled(Marker arg0) {
@@ -155,7 +151,7 @@ public class Log4TecnicasLoggerAdapter implements Logger {
 	}
 
 	public boolean isErrorEnabled() {
-		return logger.isErrorEnabled();
+		return this.logger.isErrorEnabled();
 	}
 
 	public boolean isErrorEnabled(Marker arg0) {
@@ -163,7 +159,7 @@ public class Log4TecnicasLoggerAdapter implements Logger {
 	}
 
 	public boolean isInfoEnabled() {
-		return logger.isInfoEnabled();
+		return this.logger.isInfoEnabled();
 	}
 
 	public boolean isInfoEnabled(Marker arg0) {
@@ -171,7 +167,7 @@ public class Log4TecnicasLoggerAdapter implements Logger {
 	}
 
 	public boolean isTraceEnabled() {
-		return logger.isTraceEnabled();
+		return this.logger.isTraceEnabled();
 	}
 
 	public boolean isTraceEnabled(Marker arg0) {
@@ -179,7 +175,7 @@ public class Log4TecnicasLoggerAdapter implements Logger {
 	}
 
 	public boolean isWarnEnabled() {
-		return logger.isWarnEnabled();
+		return this.logger.isWarnEnabled();
 	}
 
 	public boolean isWarnEnabled(Marker arg0) {
@@ -199,7 +195,7 @@ public class Log4TecnicasLoggerAdapter implements Logger {
 	}
 
 	public void trace(Marker arg0, String arg1, Throwable arg2) {
-		this.trace(arg1);		
+		this.trace(arg1, arg2);		
 	}
 
 	public void trace(Marker arg0, String arg1) {
@@ -219,12 +215,11 @@ public class Log4TecnicasLoggerAdapter implements Logger {
 	}
 
 	public void trace(String arg0, Throwable arg1) {
-		// TODO implement this correctly.
-		this.trace(arg0);
+		this.logger.trace(arg0, arg1);
 	}
 
 	public void trace(String arg0) {
-		logger.trace(arg0);
+		this.logger.trace(arg0);
 	}
 
 	public void warn(Marker arg0, String arg1, Object arg2, Object arg3) {
@@ -240,11 +235,11 @@ public class Log4TecnicasLoggerAdapter implements Logger {
 	}
 
 	public void warn(Marker arg0, String arg1, Throwable arg2) {
-		this.warn(arg1);		
+		this.warn(arg1, arg2);		
 	}
 
 	public void warn(Marker arg0, String arg1) {
-		this.warn(arg1);		
+		this.warn(arg1);
 	}
 
 	public void warn(String arg0, Object arg1, Object arg2) {
@@ -260,13 +255,11 @@ public class Log4TecnicasLoggerAdapter implements Logger {
 	}
 
 	public void warn(String arg0, Throwable arg1) {
-		// TODO implement this correctly.
-		this.warn(arg0);		
+		this.logger.warn(arg0, arg1);
 	}
 
 	public void warn(String arg0) {
-		logger.warn(arg0);
+		this.logger.warn(arg0);
 	}
 
-	
 }
